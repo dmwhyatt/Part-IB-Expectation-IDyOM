@@ -17,7 +17,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 RUN pip install jupyter
 
-COPY src/melody_features /workspace/src/melody_features
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/dmwhyatt/melody-features /workspace/src/melody_features
 
 WORKDIR /workspace/src/melody_features
 RUN pip install -e .
