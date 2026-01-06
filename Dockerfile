@@ -18,12 +18,12 @@ RUN pip install -r requirements.txt
 RUN pip install jupyter
 
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
-RUN git clone https://github.com/dmwhyatt/melody-features /workspace/src/melody_features
+RUN git clone https://github.com/dmwhyatt/melody-features /workspace/melody-features
 
-WORKDIR /workspace/src/melody_features
+WORKDIR /workspace/melody-features
 RUN pip install -e .
-RUN chmod +x install_idyom.sh
-RUN ./install_idyom.sh
+RUN chmod +x src/melody_features/install_idyom.sh
+RUN ./src/melody_features/install_idyom.sh
 
 WORKDIR /workspace
 COPY . .
