@@ -24,7 +24,3 @@ WORKDIR /workspace/melody-features
 RUN pip install -e .
 RUN chmod +x src/melody_features/install_idyom.sh
 RUN ./src/melody_features/install_idyom.sh
-
-WORKDIR /workspace
-COPY . .
-RUN pip install -e .
