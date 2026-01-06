@@ -17,7 +17,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 RUN pip install jupyter
 
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git musescore3 xvfb && rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/dmwhyatt/melody-features /workspace/melody-features
 
 WORKDIR /workspace/melody-features
